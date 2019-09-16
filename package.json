@@ -10,7 +10,8 @@
 	"scripts": {
 		"test": "jest --coverage",
 		"postpublish": "git push origin --all; git push origin --tags",
-		"commit": "git commit -a"
+		"commit": "git commit -a",
+		"patch": "npm version patch && npm publish"
 	},
 	"devDependencies": {
 		"jest": "^24.9.0"
@@ -23,6 +24,7 @@
 		"fbclid",
 		"gclid",
 		"normalize",
+		"referral",
 		"tracking",
 		"url",
 		"utm",
