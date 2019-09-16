@@ -4,7 +4,8 @@ describe('neatURL', () => {
 
 	it("Remove utm_source from querystring", () => {
 		expect(neatURL({
-			url: "https://www.example.com/bens-tagging?utm_source=mysite.com&utm_medium=referral&utm_campaign=url+tracking+post"
+			url: "https://www.example.com/bens-tagging?utm_source=mysite.com&utm_medium=referral&utm_campaign=url+tracking+post#Echobox=1568564590",
+			includeHash: true
 		})).toBe("https://www.example.com/bens-tagging");
 	});
 
