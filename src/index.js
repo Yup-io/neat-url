@@ -12,11 +12,13 @@ module.exports = function neatURL(params) {
 
 	// Remove tracking tokens.
 	delete urlObj.query.CNDID;
+	delete urlObj.query.__twitter_impression;
 	delete urlObj.query._hsenc;
 	delete urlObj.query._openstat;
 	delete urlObj.query.action_object_map;
 	delete urlObj.query.action_ref_map;
 	delete urlObj.query.action_type_map;
+	delete urlObj.query.amp;
 	delete urlObj.query.fb_action_ids;
 	delete urlObj.query.fb_action_types;
 	delete urlObj.query.fb_ref;
@@ -33,7 +35,10 @@ module.exports = function neatURL(params) {
 	delete urlObj.query.hmb_medium;
 	delete urlObj.query.hmb_source;
 	delete urlObj.query.mbid;
+	delete urlObj.query.mc_cid;
+	delete urlObj.query.mc_eid;
 	delete urlObj.query.mkt_tok;
+	delete urlObj.query.referrer;
 	delete urlObj.query.spJobID;
 	delete urlObj.query.spMailingID;
 	delete urlObj.query.spReportId;
@@ -54,6 +59,7 @@ module.exports = function neatURL(params) {
 	delete urlObj.query.utm_term;
 	delete urlObj.query.utm_userid;
 	delete urlObj.query.utm_viz_id;
+	delete urlObj.query.wt_mc_o;
 	delete urlObj.query.yclid;
 
 	// Get domain without subdomain.
@@ -96,6 +102,21 @@ module.exports = function neatURL(params) {
 
 	if (domain.match(/^reddit\.com$/)) {
 		delete urlObj.query.st;
+	}
+
+	if (domain.match(/^twitter\.com$/)) {
+		delete urlObj.query.s;
+		delete urlObj.query.ref_src;
+		delete urlObj.query.ref_url;
+	}
+
+	if (domain.match(/^nytimes\.com$/)) {
+		delete urlObj.query.emc;
+		delete urlObj.query.partner;
+	}
+	
+	if (domain.match(/^instagram\.com$/)) {
+		delete urlObj.query.igshid;
 	}
 
 	if (includeHash == true && typeof urlObj.hash === "string") {
