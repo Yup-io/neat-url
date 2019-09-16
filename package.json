@@ -1,11 +1,11 @@
 {
-	"name": "@my-scope/neat-url",
+	"name": "neat-url",
 	"version": "1.0.0",
 	"license": "MIT",
 	"main": "src/index.js",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/x/x.git"
+		"url": "https://gitlab.com/Cyprias/neat-url.git"
 	},
 	"scripts": {
 		"test": "jest --coverage",
