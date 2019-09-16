@@ -17,5 +17,13 @@
 	"dependencies": {
 		"psl": "^1.4.0",
 		"qs": "^6.8.0"
-	}
+	},
+	"keywords": [
+		"fbclid",
+		"gclid",
+		"tracking",
+		"url",
+		"utm",
+		"yclid"
+	],
 }
