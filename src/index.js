@@ -54,6 +54,7 @@ module.exports = function neatURL(params) {
 	delete urlObj.query.utm_place;
 	delete urlObj.query.utm_pubreferrer;
 	delete urlObj.query.utm_reader;
+	delete urlObj.query.utm_social;
 	delete urlObj.query.utm_source;
 	delete urlObj.query.utm_swu;
 	delete urlObj.query.utm_term;
@@ -117,6 +118,21 @@ module.exports = function neatURL(params) {
 	
 	if (domain.match(/^instagram\.com$/)) {
 		delete urlObj.query.igshid;
+	}
+
+	if (domain.match(/^amazon\.(com|ca|co\.jp|co\.uk|de|es|jp)$/)) {
+		delete urlObj.query.ie;
+		delete urlObj.query.creative;
+		delete urlObj.query.linkCode;
+		delete urlObj.query.creativeASIN;
+		delete urlObj.query.linkId;
+		
+		// Check for /ref=xxx at the end of the pathname.
+		var match = urlObj.pathname.match(/\/ref=(\w*)$/);
+		if (match) {
+			var firstIndex = urlObj.pathname.indexOf(match[0]);
+			urlObj.pathname = urlObj.pathname.substr(0, firstIndex);
+		}
 	}
 
 	if (includeHash == true && typeof urlObj.hash === "string") {

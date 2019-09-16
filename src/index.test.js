@@ -47,5 +47,12 @@ describe('neatURL', () => {
 		})).toBe("https://www.example.com/news/123/abc");
 	});
 	
+	it("Remove Amazon params", () => {
+		expect(neatURL({
+			url: "https://www.amazon.com/gp/product/123/ref=123?ie=UTF8&creative=123&linkCode=as2&creativeASIN=123&linkId=123"
+		})).toBe("https://www.amazon.com/gp/product/123");
+	});
+
+
 });
 
