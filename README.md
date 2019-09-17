@@ -1,6 +1,6 @@
 # neat-url
 
-Cleanup URLs by removing tracking parameters.
+Normalize URLs by removing tracking parameters.
 
 ## Example
 

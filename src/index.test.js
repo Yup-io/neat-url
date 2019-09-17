@@ -53,6 +53,11 @@ describe('neatURL', () => {
 		})).toBe("https://www.amazon.com/gp/product/123");
 	});
 
+	it("Normalize youtube url", () => {
+		expect(neatURL({
+			url: "https://www.youtube.com/watch?v=xxx&feature=push-prem-sub&attr_tag=xxx&ab_channel=xxx"
+		})).toBe("https://www.youtube.com/watch?v=xxx");
+	});
 
 });
 

@@ -95,6 +95,7 @@ module.exports = function neatURL(params) {
 	}
 
 	if (domain.match(/^youtube\.com$/)) {
+		delete urlObj.query.ab_channel;
 		delete urlObj.query.attr_tag;
 		delete urlObj.query.feature;
 		delete urlObj.query.gclid;
