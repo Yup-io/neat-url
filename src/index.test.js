@@ -59,5 +59,11 @@ describe('neatURL', () => {
 		})).toBe("https://www.youtube.com/watch?v=xxx");
 	});
 
+	it("Remove Webtrends campaign parameters", () => {
+		expect(neatURL({
+			url: "http://www.domain.com/landing.aspx?country=US&WT.mc_id=EmailCampaign1&WT.mc_ev=click&WT.srch=1"
+		})).toBe("http://www.domain.com/landing.aspx?country=US");
+	});
+
 });
 

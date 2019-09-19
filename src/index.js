@@ -62,6 +62,9 @@ module.exports = function neatURL(params) {
 	delete urlObj.query.utm_viz_id;
 	delete urlObj.query.wt_mc_o;
 	delete urlObj.query.yclid;
+	delete urlObj.query["WT.mc_id"];
+	delete urlObj.query["WT.mc_ev"];
+	delete urlObj.query["WT.srch"];
 
 	// Get domain without subdomain.
 	var parsed = psl.parse(urlObj.hostname);
