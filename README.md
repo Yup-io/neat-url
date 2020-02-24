@@ -1,6 +1,6 @@
 # neat-url
 
-Normalize URLs by removing tracking parameters.
+Normalize URLs by removing tracking parameters. 
 
 ## Example
 
@@ -21,7 +21,5 @@ npm install --save neat-url
 ```
 
 ## License
-
-Copyright © 2019
 
 Licensed under the [MIT license](LICENSE).
